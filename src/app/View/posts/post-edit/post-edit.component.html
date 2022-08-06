@@ -1,0 +1,26 @@
+<h1 class="Montserrat text-primary ">Update this item</h1>
+<hr>
+<form [formGroup]="formData" (submit)="onSubmit()">
+
+  <div class="mb-3 mt-5">
+    <label for="exampleFormControlInput1" class="form-label fw-bold">Title</label>
+    <input [value]="title" formControlName="title" type="email" class="form-control" id="exampleFormControlInput1" placeholder="Title new item">
+    <div *ngIf="formData.get('title')?.errors!=null && formData.get('title')?.touched" class="alert alert-danger mt-3 alert-dismissible fade show" role="alert">
+      <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlTextarea1" class="form-label fw-bold">Description</label>
+    <textarea  [value]="description" formControlName="description" class="form-control" id="exampleFormControlTextarea1" placeholder="Description" rows="3"></textarea>
+    <div *ngIf="formData.get('description')?.errors!=null && formData.get('description')?.touched" class="alert alert-danger mt-3 alert-dismissible fade show" role="alert">
+      <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+</div>
+
+<div class=" text-center p-2">
+  <button class="btn p-2 fs-4 btn-success w-25  rounded-pill"  >Edit </button>
+</div>
+</form>
+ 

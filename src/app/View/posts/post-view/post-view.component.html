@@ -1,0 +1,19 @@
+<h1 class="Montserrat text-primary ">Display this item</h1>
+<hr> 
+
+<div class="Montserrat-font">
+    <div class="mb-3 mt-5 d-flex  align-items-center justify-content-center">
+        <h2 class="fw-bolder text-black">Title : </h2>
+         <h4> {{title}}</h4>
+      </div>
+      <hr>
+      <div class="d-flex flex-row  align-items-center justify-content-center mb-3">
+        <h2  class="text-black fw-bolder">Description : </h2>
+       <h4 > {{description}}  </h4>
+    </div>
+      <hr>
+      <div class="text-center">
+        <a [routerLink]="['/admin/edit' , getId]" class="btn btn-primary m-auto rounded-pill fs-6 fw-bolder">Update</a>
+      </div>
+</div>
+ 

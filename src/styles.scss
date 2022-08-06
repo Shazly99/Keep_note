@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+// MDB SCSS
+@import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
+// Font Awesome
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~@fortawesome/fontawesome-free/scss/regular.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+
+// MDB SCSS
+@import "~mdb-angular-ui-kit/assets/scss/mdb.scss";
+//style admin
+@import "./assets/styles/css.css";
+// @import "./assets/styles/mdb.min.css";
+
+// font
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,400;0,600;1,100;1,400&display=swap');
+.font-monospace{
+    font-family: 'Montserrat Alternates' !important;
+    font-weight: 900 !important;
+    font-size: 25px !important;
+
+}
+
+// regular style toast
+@import '~ngx-toastr/toastr'

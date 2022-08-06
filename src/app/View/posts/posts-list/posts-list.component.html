@@ -1,0 +1,56 @@
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+  <h1 class="h2 fw-bolder Montserrath1 text-primary">List Of News</h1>
+  <div class="btn-toolbar mb-2 mb-md-0">
+    <button [routerLink]="['../add' ]"  type="button" class="btn   btn-primary   ">
+       <i class="fas fa-add"></i>
+    </button>
+  </div>
+</div>
+<div class="table-responsive">
+  <table class="table   align-middle mb-0 bg-white">
+    <thead class="bg-light ">
+      <tr class="table-active text-center fw-bolder monospace">
+        <th class="fw-bolder fs-6 Montserrat">#</th>
+        <th class="fw-bolder fs-6 Montserrat">Title</th>
+        <th class="fw-bolder fs-6 Montserrat">Description</th>
+        <th class="fw-bolder fs-6 Montserrat ">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="text-center" *ngFor="let item of postDB; let i=index">
+        <td class="fw-bold">{{i+1}}</td>
+        <td class="fw-semibold">{{item.title}}</td>
+        <td>{{ (item.description.length > 50) ? (item.description | slice:0:50)+'...':item.description }}</td>
+        <td class="  d-flex justify-content-center  ">
+          <div class=" col-md-5 d-flex justify-content-between ">
+            <button [routerLink]="['../show' , item.id]" type="button" class="btn fs-6 text-primary btn-floating">
+              <i class="fas fa-eye"></i>
+            </button>
+            <button [routerLink]="['../edit' , item.id]" type="button" class="btn fs-6 text-success btn-floating">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button (click)="deleteItem(content,item.id)" type="button" class="btn fs-6   text-danger btn-floating">
+              <i class="fas fa-trash-alt"></i>
+            </button>
+          </div>
+
+          <ng-template #content let-c="close" let-d="dismiss">
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
+              <button type="button" class="btn-close" aria-label="Close" (click)="d('Cross click')"></button>
+            </div>
+            <div class="modal-body">
+              <p>Hello, World!</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark  " aria-label="Close"
+                (click)="d('Cross click')">Cancel</button>
+              <button type="button" class="btn btn-danger" (click)="c('Save click')">Ok</button>
+            </div>
+          </ng-template>
+
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

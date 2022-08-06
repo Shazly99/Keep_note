@@ -1,0 +1,29 @@
+<div class="modal-body">
+  <form [formGroup]="formData" (submit)="onSubmit(idShow)">
+
+    <div class="mb-3  ">
+      <label for="exampleFormControlInput1" class="form-label fw-bold">Title</label>
+      <input   formControlName="title" type="email" class="form-control"id="exampleFormControlInput1" placeholder="Title new item">
+
+      <div *ngIf="formData.get('title')?.errors!=null && formData.get('title')?.touched"class="alert alert-danger mt-3 alert-dismissible fade show" role="alert">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label fw-bold">Description</label>
+      <textarea   formControlName="description" class="form-control"id="exampleFormControlTextarea1" placeholder="Description" rows="3"></textarea>
+      
+      <div *ngIf="formData.get('description')?.errors!=null && formData.get('description')?.touched" class="alert alert-danger mt-3 alert-dismissible fade show" role="alert">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+      </div>
+    </div>
+
+    <div class=" text-center p-2">
+      <button class="btn p-2 px-3   btn-outline-dark ">{{idShow?'Update':'Add'}}</button>
+    </div>
+  </form>
+
+
+</div>
